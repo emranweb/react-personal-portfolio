@@ -1,14 +1,20 @@
-import styled from "styled-components";
+import React from "react";
+import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
-export const ButtonPrimaryStyled = styled(Button)`
-  background-color: #6772e5;
-  color: #fff;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  padding: 7px 14px;
-  &:hover {
-    background-color: #5469d4;
-  }
-`;
-
-export default ButtonPrimaryStyled;
+// The `withStyles()` higher-order component is injecting a `classes`
+// prop that is used by the `Button` component.
+export const ButtonPrimaryStyled = withStyles({
+  root: {
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    borderRadius: 3,
+    border: 0,
+    color: "white",
+    height: 48,
+    padding: "0 30px",
+    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+  },
+  label: {
+    textTransform: "capitalize",
+  },
+})(Button);

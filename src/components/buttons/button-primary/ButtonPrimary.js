@@ -1,4 +1,4 @@
-import ButtonPrimaryStyled from "./ButtonPrimary.style";
+import { ButtonPrimaryStyled } from "./ButtonPrimary.style";
 
 import React from "react";
 
