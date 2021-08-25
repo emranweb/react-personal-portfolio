@@ -1,13 +1,22 @@
 import GlobalStyle from "./Global.style";
-import { Button } from "./components/button";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Header from "./components/header";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <header className="App-header">
-        <Button>Download CV</Button>
-      </header>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/contact" exact component={HomePage} />
+          <Route path="/blogs" exact component={HomePage} />
+          <Route path="/portfolio" exact component={HomePage} />
+          <Route path="/about" exact component={HomePage} />
+          <Route path="/" exact component={HomePage} />
+        </Switch>
+      </Router>
     </div>
   );
 }
