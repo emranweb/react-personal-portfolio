@@ -5,15 +5,14 @@ export const HeaderWrapper = styled.header`
   background: transparent;
   height: 70px;
   display: flex;
-  justify-content: space-between;
-  max-width: 1140px;
-  margin: 0 auto;
   align-items: center;
 `;
 
 export const NavWrapper = styled.nav`
   ul {
     list-style: none;
+    margin: 0px;
+    padding: 0px;
   }
   li {
     display: inline-block;
