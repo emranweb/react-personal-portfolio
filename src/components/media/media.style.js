@@ -10,6 +10,9 @@ const MediaStyle = styled.div`
     flex: 1 0 auto;
     margin-right: 40px;
   }
+  p {
+    margin-right: 10%;
+  }
 `;
 
 export default MediaStyle;

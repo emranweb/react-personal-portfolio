@@ -7,6 +7,10 @@ import PersonImgUrl from "../assets/person-image.jpg";
 import { H2, H3, H4, P } from "./../components/typography";
 import Button from "../components/button";
 import Media from "../components/media";
+import { FaDesktop, FaThinkPeaks, FaAccusoft } from "react-icons/fa";
+import pro1 from "../assets/project-01.jpg";
+import client1 from "../assets/1.png";
+import Client from "../components/client";
 
 const HomePage = () => {
   return (
@@ -63,14 +67,161 @@ const HomePage = () => {
         <Container>
           <Row>
             <Col md={4}>
-              <Media />
+              <Media>
+                <FaDesktop></FaDesktop>
+                <div>
+                  <H4>Web Development</H4>
+                  <P>
+                    Web design is a similar process of creation, with the
+                    intention of presenting...
+                  </P>
+                </div>
+              </Media>
             </Col>
             <Col md={4}>
-              <Media />
+              <Media>
+                <FaThinkPeaks></FaThinkPeaks>
+                <div>
+                  <H4>Creative Design</H4>
+                  <P>
+                    Web design is a similar process of creation, with the
+                    intention of presenting...
+                  </P>
+                </div>
+              </Media>
             </Col>
             <Col md={4}>
-              <Media />
+              <Media>
+                <FaAccusoft></FaAccusoft>
+                <div>
+                  <H4>Brand Identity</H4>
+                  <P>
+                    Web design is a similar process of creation, with the
+                    intention of presenting...
+                  </P>
+                </div>
+              </Media>
             </Col>
+          </Row>
+        </Container>
+      </Section>
+      <Section bgcolor>
+        <Container>
+          <Row>
+            <Col lg={12}>
+              <div className="position-relative mb-5">
+                <H2>Portfolio</H2>
+                <H3>Featured Works</H3>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={4}>
+              <div className="mt-5">
+                <img
+                  className="img-fluid mb-4 rounded"
+                  src={pro1}
+                  alt="project1"
+                />
+                <H4>Beauty Girl</H4>
+                <P>Design</P>
+              </div>
+            </Col>
+            <Col md={4}>
+              <div className="mt-5">
+                <img
+                  className="img-fluid mb-4 rounded"
+                  src={pro1}
+                  alt="project1"
+                />
+                <H4>Beauty Girl</H4>
+                <P>Design</P>
+              </div>
+            </Col>
+            <Col md={4}>
+              <div className="mt-5">
+                <img
+                  className="img-fluid mb-4 rounded"
+                  src={pro1}
+                  alt="project1"
+                />
+                <H4>Beauty Girl</H4>
+                <P>Design</P>
+              </div>
+            </Col>
+            <Col md={4}>
+              <div className="mt-5">
+                <img
+                  className="img-fluid mb-4 rounded"
+                  src={pro1}
+                  alt="project1"
+                />
+                <H4>Beauty Girl</H4>
+                <P>Design</P>
+              </div>
+            </Col>
+            <Col md={4}>
+              <div className="mt-5">
+                <img
+                  className="img-fluid mb-4 rounded"
+                  src={pro1}
+                  alt="project1"
+                />
+                <H4>Beauty Girl</H4>
+                <P>Design</P>
+              </div>
+            </Col>
+            <Col md={4}>
+              <div className="mt-5">
+                <img
+                  className="img-fluid mb-4 rounded"
+                  src={pro1}
+                  alt="project1"
+                />
+                <H4>Beauty Girl</H4>
+                <P>Design</P>
+              </div>
+            </Col>
+          </Row>
+          <Button>Download CV</Button>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <Row>
+            <div className="d-flex flex-wrap">
+              <Client>
+                <img src={client1} alt="client1" />
+              </Client>
+              <Client>
+                <img src={client1} alt="client1" />
+              </Client>
+              <Client>
+                <img src={client1} alt="client1" />
+              </Client>
+              <Client>
+                <img src={client1} alt="client1" />
+              </Client>
+              <Client>
+                <img src={client1} alt="client1" />
+              </Client>
+              <Client>
+                <img src={client1} alt="client1" />
+              </Client>
+              <Client>
+                <img src={client1} alt="client1" />
+              </Client>
+              <Client>
+                <img src={client1} alt="client1" />
+              </Client>
+            </div>
+          </Row>
+        </Container>
+      </Section>
+      <Section>
+        <Container>
+          <Row>
+            <Col lg={12}></Col>
           </Row>
         </Container>
       </Section>
