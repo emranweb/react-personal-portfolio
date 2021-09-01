@@ -11,6 +11,7 @@ import { FaDesktop, FaThinkPeaks, FaAccusoft } from "react-icons/fa";
 import pro1 from "../assets/project-01.jpg";
 import client1 from "../assets/1.png";
 import Client from "../components/client";
+import Testimonial from "./../components/testimonial/index";
 
 const HomePage = () => {
   return (
@@ -221,7 +222,13 @@ const HomePage = () => {
       <Section>
         <Container>
           <Row>
-            <Col lg={12}></Col>
+            <Col lg={12}>
+              <div className="position-relative">
+                <H2>Testimonial</H2>
+                <H3>What Clients Say </H3>
+              </div>
+            </Col>
+            <Testimonial></Testimonial>
           </Row>
         </Container>
       </Section>
