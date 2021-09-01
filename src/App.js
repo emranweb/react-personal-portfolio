@@ -1,12 +1,12 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { ButtonPrimary, ButtonSecondary } from "./components/buttons";
+import GlobalStyle from "./Global.style";
+import { Button } from "./components/button";
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyle />
       <header className="App-header">
-        <ButtonPrimary>Hello World</ButtonPrimary>
+        <Button>Download CV</Button>
       </header>
     </div>
   );

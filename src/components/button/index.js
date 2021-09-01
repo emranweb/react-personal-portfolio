@@ -2,8 +2,8 @@ import { ButtonPrimaryStyled } from "./ButtonPrimary.style";
 
 import React from "react";
 
-export const ButtonPrimary = ({ children }) => {
+export const Button = ({ children }) => {
   return <ButtonPrimaryStyled>{children}</ButtonPrimaryStyled>;
 };
 
-export default ButtonPrimary;
+export default Button;
