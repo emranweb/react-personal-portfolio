@@ -223,7 +223,7 @@ const HomePage = () => {
         <Container>
           <Row>
             <Col lg={12}>
-              <div className="position-relative">
+              <div className="position-relative pb-5">
                 <H2>Testimonial</H2>
                 <H3>What Clients Say </H3>
               </div>
