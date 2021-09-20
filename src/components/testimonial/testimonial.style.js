@@ -10,6 +10,9 @@ export const ImageWrapper = styled.div`
     max-width: 220px;
     opacity: 0.6;
     transition: all 0.4s ease;
+    &:hover {
+      cursor: pointer;
+    }
   }
   .item-image.active {
     opacity: 1;

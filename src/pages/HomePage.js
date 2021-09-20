@@ -12,6 +12,7 @@ import pro1 from "../assets/project-01.jpg";
 import client1 from "../assets/1.png";
 import Client from "../components/client";
 import Testimonial from "./../components/testimonial/index";
+import Blog from "../components/blog";
 
 const HomePage = () => {
   return (
@@ -232,6 +233,29 @@ const HomePage = () => {
           </Row>
         </Container>
       </Section>
+      <section>
+        <Container>
+          <Row>
+            <Col lg={12}>
+              <div className="position-relative pb-5">
+                <H2>News</H2>
+                <H3>Latest News </H3>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={4}>
+              <Blog />
+            </Col>
+            <Col lg={4}>
+              <Blog />
+            </Col>
+            <Col lg={4}>
+              <Blog />
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </>
   );
 };
