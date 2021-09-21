@@ -13,6 +13,7 @@ import client1 from "../assets/1.png";
 import Client from "../components/client";
 import Testimonial from "./../components/testimonial/index";
 import Blog from "../components/blog";
+import Contact from "../components/contact";
 
 const HomePage = () => {
   return (
@@ -252,6 +253,34 @@ const HomePage = () => {
             </Col>
             <Col lg={4}>
               <Blog />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section>
+        <Container>
+          <Row>
+            <Col lg={12}>
+              <div className="position-relative pb-5">
+                <H2>Contact</H2>
+                <H3>Get In Touch </H3>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={6}>
+              <Contact />
+            </Col>
+            <Col lg={6}>
+              <p>
+                A full stack allaround designer that tristique est placerat in
+                massa consectetur quisque lobortis vitae faucibus diam Dolor sit
+                amet, consectetur adipiscing elit viverra tristique
+              </p>
+              <address>
+                Name: Rob Davidson Address: New York, USA Phone: +1 234-567-890
+                Hours: 6:00 am – 2:00 am
+              </address>
             </Col>
           </Row>
         </Container>
