@@ -7,7 +7,14 @@ import PersonImgUrl from "../assets/person-image.jpg";
 import { H2, H3, H4, P } from "./../components/typography";
 import Button from "../components/button";
 import Media from "../components/media";
-import { FaDesktop, FaThinkPeaks, FaAccusoft } from "react-icons/fa";
+import {
+  FaDesktop,
+  FaThinkPeaks,
+  FaAccusoft,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
 import pro1 from "../assets/project-01.jpg";
 import client1 from "../assets/1.png";
 import Client from "../components/client";
@@ -15,7 +22,11 @@ import Testimonial from "./../components/testimonial/index";
 import Blog from "../components/blog";
 import Contact from "../components/contact";
 
+import { useContext } from "react";
+import { PortfolioCon } from "../App";
+
 const HomePage = () => {
+  const PortData = useContext(PortfolioCon);
   return (
     <>
       <Section padding="200 100">
@@ -45,11 +56,11 @@ const HomePage = () => {
                 />
               </div>
             </Col>
-            <Col lg={7}>
+            <Col lg={{ span: 6, offset: 1 }}>
               <div className="position-relative">
-                <H2>About</H2>
-                <H3>Bernard Sydney</H3>
-                <H4>Creative Web & App Developer</H4>
+                <H2 className="mb-2">About</H2>
+                <H3 className="mb-3">Bernard Sydney</H3>
+                <H4 className="mb-4">Creative Web & App Developer</H4>
                 <P>
                   My name is Bernard Sydney. I am a Web Developer, and I'm very
                   passionate and dedicated to my work.
@@ -121,68 +132,19 @@ const HomePage = () => {
           <Row>
             <Col md={4}>
               <div className="mt-5">
-                <img
-                  className="img-fluid mb-4 rounded"
-                  src={pro1}
-                  alt="project1"
-                />
-                <H4>Beauty Girl</H4>
-                <P>Design</P>
-              </div>
-            </Col>
-            <Col md={4}>
-              <div className="mt-5">
-                <img
-                  className="img-fluid mb-4 rounded"
-                  src={pro1}
-                  alt="project1"
-                />
-                <H4>Beauty Girl</H4>
-                <P>Design</P>
-              </div>
-            </Col>
-            <Col md={4}>
-              <div className="mt-5">
-                <img
-                  className="img-fluid mb-4 rounded"
-                  src={pro1}
-                  alt="project1"
-                />
-                <H4>Beauty Girl</H4>
-                <P>Design</P>
-              </div>
-            </Col>
-            <Col md={4}>
-              <div className="mt-5">
-                <img
-                  className="img-fluid mb-4 rounded"
-                  src={pro1}
-                  alt="project1"
-                />
-                <H4>Beauty Girl</H4>
-                <P>Design</P>
-              </div>
-            </Col>
-            <Col md={4}>
-              <div className="mt-5">
-                <img
-                  className="img-fluid mb-4 rounded"
-                  src={pro1}
-                  alt="project1"
-                />
-                <H4>Beauty Girl</H4>
-                <P>Design</P>
-              </div>
-            </Col>
-            <Col md={4}>
-              <div className="mt-5">
-                <img
-                  className="img-fluid mb-4 rounded"
-                  src={pro1}
-                  alt="project1"
-                />
-                <H4>Beauty Girl</H4>
-                <P>Design</P>
+                {PortData.data.map((item) => {
+                  return (
+                    <div key={item.id}>
+                      <img
+                        className="img-fluid mb-4 rounded"
+                        src={item.thumb}
+                        alt="project1"
+                      />
+                      <H4>{item.title}</H4>
+                      <P>{item.details.category}</P>
+                    </div>
+                  );
+                })}
               </div>
             </Col>
           </Row>
@@ -275,16 +237,39 @@ const HomePage = () => {
               <p>
                 A full stack allaround designer that tristique est placerat in
                 massa consectetur quisque lobortis vitae faucibus diam Dolor sit
-                amet, consectetur adipiscing elit viverra tristique
+                amet, consectetur adipiscing elit viverra tristique.
               </p>
               <address>
-                Name: Rob Davidson Address: New York, USA Phone: +1 234-567-890
-                Hours: 6:00 am – 2:00 am
+                <p>Name: Rob Davidson Address: New York, USA</p>
+                <p>Phone: +1 234-567-890</p>
+                <p>Hours: 6:00 am – 2:00 am</p>
               </address>
             </Col>
           </Row>
         </Container>
       </section>
+      <footer>
+        <Container>
+          <Row>
+            <Col md={6}>
+              <p>&copy; 2010 -2021 emranweb. All Rights Reserved.</p>
+            </Col>
+            <Col md={6}>
+              <ul>
+                <li>
+                  <FaFacebookF />
+                </li>
+                <li>
+                  <FaLinkedinIn />
+                </li>
+                <li>
+                  <FaTwitter />
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
     </>
   );
 };
