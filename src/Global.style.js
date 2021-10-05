@@ -12,6 +12,25 @@ font-family: 'Mulish', sans-serif;
 font-size: 16px;
 font-weight: normal;
 }
+
+ul{
+  list-style:none;
+  padding:0px
+}
+li{
+  display:inline-block;
+  padding: 0px 5px;
+}
+a{
+  text-decoration:none;
+}
+
+footer{
+  background-color:#000;
+  color:#fff;
+  padding:10px 0px;
+}
+
 `;
 
 export default GlobalStyle;
