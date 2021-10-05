@@ -7,7 +7,14 @@ import PersonImgUrl from "../assets/person-image.jpg";
 import { H2, H3, H4, P } from "./../components/typography";
 import Button from "../components/button";
 import Media from "../components/media";
-import { FaDesktop, FaThinkPeaks, FaAccusoft } from "react-icons/fa";
+import {
+  FaDesktop,
+  FaThinkPeaks,
+  FaAccusoft,
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+} from "react-icons/fa";
 import pro1 from "../assets/project-01.jpg";
 import client1 from "../assets/1.png";
 import Client from "../components/client";
@@ -278,13 +285,36 @@ const HomePage = () => {
                 amet, consectetur adipiscing elit viverra tristique
               </p>
               <address>
-                Name: Rob Davidson Address: New York, USA Phone: +1 234-567-890
-                Hours: 6:00 am – 2:00 am
+                <p>Name: Rob Davidson Address: New York, USA</p>
+                <p>Phone: +1 234-567-890</p>
+                <p>Hours: 6:00 am – 2:00 am</p>
               </address>
             </Col>
           </Row>
         </Container>
       </section>
+      <footer>
+        <Container>
+          <Row>
+            <Col md={6}>
+              <p>&copy; 2010 -2021 emranweb. All Rights Reserved.</p>
+            </Col>
+            <Col md={6}>
+              <ul>
+                <li>
+                  <FaFacebookF />
+                </li>
+                <li>
+                  <FaTwitter />
+                </li>
+                <li>
+                  <FaLinkedinIn />
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </Container>
+      </footer>
     </>
   );
 };
