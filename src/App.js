@@ -4,15 +4,18 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Header from "./components/header";
 import PortfolioDetails from "./pages/PortfolioDetails";
-import pro1 from "./assets/project-01.jpg";
+import portfolio_image1 from "./assets/portfolio-1.jpg";
+import portfolio_image2 from "./assets/portfolio-2.jpg";
+import portfolio_image3 from "./assets/portfolio-3.jpg";
+import portfolio_image4 from "./assets/portfolio-4.jpg";
 
 export const PortfolioCon = React.createContext();
 
 const data = [
   {
-    id: 0,
+    id: 1,
     title: "Beauty Girl",
-    thumb: pro1,
+    thumb: portfolio_image1,
     details: {
       category: "Design",
       client: "Abc Cort",
@@ -20,7 +23,46 @@ const data = [
       info: "Aussies were developed on ranches in the western United States, and were seen as early as the 1800s. These pups are very focused, and need lots of attention, pawsitive reinforcement, and exercise. They can still be found working on the ranch, but also work as guide dogs, therapy dogs, drug detectors, and of course, man’s best friend. People often seek them out for their incredibly strong hunting abilities. They are excellent swimmers, too, so a nice lake or pool is A-OK! However, they do require regular exercise and would fit best with an active family.",
     },
 
-    images: [pro1],
+    images: [portfolio_image1],
+  },
+  {
+    id: 2,
+    title: "Beauty Girl",
+    thumb: portfolio_image2,
+    details: {
+      category: "Design",
+      client: "Abc Cort",
+      imageby: "Abc",
+      info: "Aussies were developed on ranches in the western United States, and were seen as early as the 1800s. These pups are very focused, and need lots of attention, pawsitive reinforcement, and exercise. They can still be found working on the ranch, but also work as guide dogs, therapy dogs, drug detectors, and of course, man’s best friend. People often seek them out for their incredibly strong hunting abilities. They are excellent swimmers, too, so a nice lake or pool is A-OK! However, they do require regular exercise and would fit best with an active family.",
+    },
+
+    images: [portfolio_image2],
+  },
+  {
+    id: 3,
+    title: "Beauty Girl",
+    thumb: portfolio_image3,
+    details: {
+      category: "Design",
+      client: "Abc Cort",
+      imageby: "Abc",
+      info: "Aussies were developed on ranches in the western United States, and were seen as early as the 1800s. These pups are very focused, and need lots of attention, pawsitive reinforcement, and exercise. They can still be found working on the ranch, but also work as guide dogs, therapy dogs, drug detectors, and of course, man’s best friend. People often seek them out for their incredibly strong hunting abilities. They are excellent swimmers, too, so a nice lake or pool is A-OK! However, they do require regular exercise and would fit best with an active family.",
+    },
+
+    images: [portfolio_image3],
+  },
+  {
+    id: 4,
+    title: "Beauty Girl",
+    thumb: portfolio_image4,
+    details: {
+      category: "Design",
+      client: "Abc Cort",
+      imageby: "Abc",
+      info: "Aussies were developed on ranches in the western United States, and were seen as early as the 1800s. These pups are very focused, and need lots of attention, pawsitive reinforcement, and exercise. They can still be found working on the ranch, but also work as guide dogs, therapy dogs, drug detectors, and of course, man’s best friend. People often seek them out for their incredibly strong hunting abilities. They are excellent swimmers, too, so a nice lake or pool is A-OK! However, they do require regular exercise and would fit best with an active family.",
+    },
+
+    images: [portfolio_image4],
   },
 ];
 

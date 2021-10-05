@@ -15,7 +15,6 @@ import {
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
-import pro1 from "../assets/project-01.jpg";
 import client1 from "../assets/1.png";
 import Client from "../components/client";
 import Testimonial from "./../components/testimonial/index";
@@ -130,23 +129,21 @@ const HomePage = () => {
             </Col>
           </Row>
           <Row>
-            <Col md={4}>
-              <div className="mt-5">
-                {PortData.data.map((item) => {
-                  return (
-                    <div key={item.id}>
-                      <img
-                        className="img-fluid mb-4 rounded"
-                        src={item.thumb}
-                        alt="project1"
-                      />
-                      <H4>{item.title}</H4>
-                      <P>{item.details.category}</P>
-                    </div>
-                  );
-                })}
-              </div>
-            </Col>
+            {PortData.data.map((item) => {
+              return (
+                <Col md={4} key={item.id}>
+                  <div>
+                    <img
+                      className="img-fluid mb-4 rounded"
+                      src={item.thumb}
+                      alt="project1"
+                    />
+                    <H4>{item.title}</H4>
+                    <P>{item.details.category}</P>
+                  </div>
+                </Col>
+              );
+            })}
           </Row>
           <Button>Download CV</Button>
         </Container>
