@@ -1,9 +1,14 @@
 import React from "react";
+import { H4, P } from "../typography";
 
-export const Portfolio = () => {
+const Portfolio = ({ item }) => {
   return (
     <div>
-      <h1>Single Portfolio</h1>
+      <img className="img-fluid mb-4 rounded" src={item.thumb} alt="project1" />
+      <H4>{item.title}</H4>
+      <P>{item.details.category}</P>
     </div>
   );
 };
+
+export default Portfolio;

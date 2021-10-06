@@ -132,15 +132,7 @@ const HomePage = () => {
             {PortData.data.map((item) => {
               return (
                 <Col md={4} key={item.id}>
-                  <div>
-                    <img
-                      className="img-fluid mb-4 rounded"
-                      src={item.thumb}
-                      alt="project1"
-                    />
-                    <H4>{item.title}</H4>
-                    <P>{item.details.category}</P>
-                  </div>
+                  <div>test</div>
                 </Col>
               );
             })}
