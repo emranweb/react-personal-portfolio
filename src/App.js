@@ -8,6 +8,9 @@ import portfolio_image1 from "./assets/portfolio-1.jpg";
 import portfolio_image2 from "./assets/portfolio-2.jpg";
 import portfolio_image3 from "./assets/portfolio-3.jpg";
 import portfolio_image4 from "./assets/portfolio-4.jpg";
+import Admin from "./pages/admin";
+import SignIn from "./pages/SignIn";
+import ProtectedRoute from "./components/projected";
 
 export const PortfolioCon = React.createContext();
 
@@ -86,6 +89,12 @@ function App() {
       <Router>
         <Header />
         <Switch>
+          <ProtectedRoute
+            path="/admin"
+            exact
+            component={Admin}
+          ></ProtectedRoute>
+          <Route path="/signin" exact component={SignIn} />
           <Route path="/contact" exact component={HomePage} />
           <Route path="/blogs" exact component={HomePage} />
           <Route
