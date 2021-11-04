@@ -69,6 +69,17 @@ const data = [
   },
 ];
 
+// users
+
+const users = [
+  {
+    id: 1,
+    name: "Test 1",
+    email: "test1@gmail.com",
+    pass: "1111",
+  },
+];
+
 const initialValue = data;
 
 const reducer = (state, action) => {
