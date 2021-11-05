@@ -13,6 +13,7 @@ import SignIn from "./pages/SignIn";
 import ProtectedRoute from "./components/projected";
 
 export const PortfolioCon = React.createContext();
+export const UserCon = React.createContext();
 
 const data = [
   {
@@ -71,16 +72,7 @@ const data = [
 
 // users
 
-const users = [
-  {
-    id: 1,
-    name: "Test 1",
-    email: "test1@gmail.com",
-    pass: "1111",
-  },
-];
-
-const initialValue = data;
+const users = [];
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -91,9 +83,20 @@ const reducer = (state, action) => {
   }
 };
 
+const userReducer = (state, action) => {
+  switch (action.type) {
+    case "add":
+      return [...state, action.payload];
+    default:
+      return state;
+  }
+};
+
 function App() {
-  const [portolio, setPortfolio] = useReducer(reducer, initialValue);
-  console.log(portolio);
+  const [portolio, setPortfolio] = useReducer(reducer, data);
+  const [user, insertUser] = useReducer(userReducer, users);
+  console.log(user);
+
   return (
     <div className="App">
       <GlobalStyle />
@@ -105,7 +108,15 @@ function App() {
             exact
             component={Admin}
           ></ProtectedRoute>
-          <Route path="/signin" exact component={SignIn} />
+          <Route
+            path="/signin"
+            exact
+            render={() => (
+              <UserCon.Provider value={insertUser}>
+                <SignIn />
+              </UserCon.Provider>
+            )}
+          />
           <Route path="/contact" exact component={HomePage} />
           <Route path="/blogs" exact component={HomePage} />
           <Route
