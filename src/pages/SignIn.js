@@ -1,10 +1,12 @@
+import { computeHeadingLevel } from "@testing-library/dom";
 import React, { useState, useContext } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { UserCon } from "../App";
 
 const SignIn = () => {
-  const userDispatch = useContext(UserCon);
+  const UserContext = useContext(UserCon);
   const [userData, setData] = useState({ name: "", email: "", password: "" });
+  const [warning, setWaring] = useState(false);
   const handleChange = (e) => {
     e.preventDefault();
     setData({ ...userData, [e.target.name]: e.target.value });
@@ -12,7 +14,14 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    userDispatch({ type: "add", payload: userData });
+    const userDataFromApp = UserContext.data;
+    if (JSON.stringify(userDataFromApp) === JSON.stringify(userData)) {
+      setWaring(true);
+      console.log("Hi");
+    } else {
+      setWaring(false);
+      console.log("hello");
+    }
   };
 
   return (
@@ -56,6 +65,11 @@ const SignIn = () => {
               </Button>
             </Form>
           </Col>
+          <Row>
+            <div>
+              <h4>{warning === false ? "Hi" : "invlid"}</h4>
+            </div>
+          </Row>
         </Row>
       </Container>
     </div>

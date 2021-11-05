@@ -72,7 +72,11 @@ const data = [
 
 // users
 
-const users = [];
+const users = {
+  name: "admin",
+  email: "admin@gmail.com",
+  password: "12345",
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -112,7 +116,7 @@ function App() {
             path="/signin"
             exact
             render={() => (
-              <UserCon.Provider value={insertUser}>
+              <UserCon.Provider value={{ data: user, dispatch: insertUser }}>
                 <SignIn />
               </UserCon.Provider>
             )}
