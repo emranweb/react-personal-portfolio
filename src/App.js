@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 import GlobalStyle from "./Global.style";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Header from "./components/header";
 import PortfolioDetails from "./pages/PortfolioDetails";

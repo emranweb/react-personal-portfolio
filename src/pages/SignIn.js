@@ -1,4 +1,3 @@
-import { computeHeadingLevel } from "@testing-library/dom";
 import React, { useState, useContext } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { UserCon } from "../App";
@@ -17,10 +16,8 @@ const SignIn = () => {
     const userDataFromApp = UserContext.data;
     if (JSON.stringify(userDataFromApp) === JSON.stringify(userData)) {
       setWaring(true);
-      console.log("Hi");
     } else {
       setWaring(false);
-      console.log("hello");
     }
   };
 
