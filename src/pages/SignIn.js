@@ -1,24 +1,31 @@
 import React, { useState, useContext } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { useHistory } from "react-router";
 import { UserCon } from "../App";
 
 const SignIn = () => {
   const UserContext = useContext(UserCon);
   const [userData, setData] = useState({ name: "", email: "", password: "" });
   const [warning, setWaring] = useState(false);
+  const history = useHistory();
+
   const handleChange = (e) => {
     e.preventDefault();
     setData({ ...userData, [e.target.name]: e.target.value });
+    setWaring(false);
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
     const userDataFromApp = UserContext.data;
     if (JSON.stringify(userDataFromApp) === JSON.stringify(userData)) {
-      setWaring(true);
-    } else {
       setWaring(false);
+      localStorage.setItem("islogin", true);
+      history.push("/admin");
+    } else {
+      setWaring(true);
+      localStorage.setItem("islogin", false);
     }
+    e.preventDefault();
   };
 
   return (
@@ -64,7 +71,7 @@ const SignIn = () => {
           </Col>
           <Row>
             <div>
-              <h4>{warning === false ? "Hi" : "invlid"}</h4>
+              <h4>{warning === false ? "" : "invlid"}</h4>
             </div>
           </Row>
         </Row>
