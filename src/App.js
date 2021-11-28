@@ -27,11 +27,11 @@ const data = [
       info: "Aussies were developed on ranches in the western United States, and were seen as early as the 1800s. These pups are very focused, and need lots of attention, pawsitive reinforcement, and exercise. They can still be found working on the ranch, but also work as guide dogs, therapy dogs, drug detectors, and of course, man’s best friend. People often seek them out for their incredibly strong hunting abilities. They are excellent swimmers, too, so a nice lake or pool is A-OK! However, they do require regular exercise and would fit best with an active family.",
     },
 
-    images: [portfolio_image1],
+    images: [portfolio_image1, portfolio_image2],
   },
   {
     id: 2,
-    title: "Beauty Girl",
+    title: "Modern Art",
     thumb: portfolio_image2,
     details: {
       category: "Design",
@@ -40,11 +40,11 @@ const data = [
       info: "Aussies were developed on ranches in the western United States, and were seen as early as the 1800s. These pups are very focused, and need lots of attention, pawsitive reinforcement, and exercise. They can still be found working on the ranch, but also work as guide dogs, therapy dogs, drug detectors, and of course, man’s best friend. People often seek them out for their incredibly strong hunting abilities. They are excellent swimmers, too, so a nice lake or pool is A-OK! However, they do require regular exercise and would fit best with an active family.",
     },
 
-    images: [portfolio_image2],
+    images: [portfolio_image2, portfolio_image1],
   },
   {
     id: 3,
-    title: "Beauty Girl",
+    title: "Red Nike",
     thumb: portfolio_image3,
     details: {
       category: "Design",
@@ -57,7 +57,33 @@ const data = [
   },
   {
     id: 4,
-    title: "Beauty Girl",
+    title: "New Technology",
+    thumb: portfolio_image4,
+    details: {
+      category: "Design",
+      client: "Abc Cort",
+      imageby: "Abc",
+      info: "Aussies were developed on ranches in the western United States, and were seen as early as the 1800s. These pups are very focused, and need lots of attention, pawsitive reinforcement, and exercise. They can still be found working on the ranch, but also work as guide dogs, therapy dogs, drug detectors, and of course, man’s best friend. People often seek them out for their incredibly strong hunting abilities. They are excellent swimmers, too, so a nice lake or pool is A-OK! However, they do require regular exercise and would fit best with an active family.",
+    },
+
+    images: [portfolio_image4],
+  },
+  {
+    id: 5,
+    title: "The Mountain",
+    thumb: portfolio_image4,
+    details: {
+      category: "Design",
+      client: "Abc Cort",
+      imageby: "Abc",
+      info: "Aussies were developed on ranches in the western United States, and were seen as early as the 1800s. These pups are very focused, and need lots of attention, pawsitive reinforcement, and exercise. They can still be found working on the ranch, but also work as guide dogs, therapy dogs, drug detectors, and of course, man’s best friend. People often seek them out for their incredibly strong hunting abilities. They are excellent swimmers, too, so a nice lake or pool is A-OK! However, they do require regular exercise and would fit best with an active family.",
+    },
+
+    images: [portfolio_image4],
+  },
+  {
+    id: 6,
+    title: "Modern Technology",
     thumb: portfolio_image4,
     details: {
       category: "Design",
@@ -99,19 +125,14 @@ const userReducer = (state, action) => {
 function App() {
   const [portolio, setPortfolio] = useReducer(reducer, data);
   const [user, insertUser] = useReducer(userReducer, users);
-  console.log(user);
 
   return (
     <div className="App">
       <GlobalStyle />
       <Router>
         <Header />
+        <ProtectedRoute path="/admin" exact component={Admin}></ProtectedRoute>
         <Switch>
-          <ProtectedRoute
-            path="/admin"
-            exact
-            component={Admin}
-          ></ProtectedRoute>
           <Route
             path="/signin"
             exact
@@ -126,9 +147,9 @@ function App() {
           <Route
             path="/portfolio/:id"
             exact
-            render={() => (
-              <PortfolioCon.Provider value={{ count: setPortfolio }}>
-                <PortfolioDetails />
+            render={(props) => (
+              <PortfolioCon.Provider value={{ data: portolio }}>
+                <PortfolioDetails {...props} />
               </PortfolioCon.Provider>
             )}
           />

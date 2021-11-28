@@ -23,6 +23,7 @@ import Contact from "../components/contact";
 
 import { useContext } from "react";
 import { PortfolioCon } from "../App";
+import Portfolio from "./../components/portfolio/index";
 
 const HomePage = () => {
   const PortData = useContext(PortfolioCon);
@@ -132,14 +133,7 @@ const HomePage = () => {
             {PortData.data.map((item) => {
               return (
                 <Col md={4} key={item.id}>
-                  <div>
-                    <img
-                      className="img-fluid"
-                      src={item.thumb}
-                      alt="port image"
-                    />
-                    <div>{item.title}</div>
-                  </div>
+                  <Portfolio item={item} />
                 </Col>
               );
             })}
